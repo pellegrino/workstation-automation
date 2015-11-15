@@ -7,4 +7,3 @@
 
     - name: Install pia
       homebrew_cask: name=private-internet-access state=present
-      sudo: false

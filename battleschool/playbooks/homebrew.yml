@@ -9,6 +9,9 @@
                url=https://raw.githubusercontent.com/Homebrew/install/master/install
 
     - name: Install cask
-      command: brew install caskroom/cask/brew-cask
-        creates=/usr/local/bin/brew-cask
+      homebrew: name=caskroom/cask/brew-cask state=present
+      sudo: false
+
+    - name: Install cask completions
+      homebrew: name=homebrew/completions/brew-cask-completion state=present
       sudo: false

@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install transmission
+      homebrew_cask: name=transmission state=present
+      sudo: false

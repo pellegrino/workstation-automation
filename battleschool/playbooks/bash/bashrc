@@ -1,7 +1,6 @@
 BASH_EXTRAS=~/.bash-extras
 
-#export TERM="xterm-color"
-export TERM=xterm-256color
+export TERM="xterm-color"
 
 for config_file in $BASH_EXTRAS/*.bash
 do
@@ -29,21 +28,13 @@ if [ -d /usr/local/share/python ]; then
   PATH=$PATH:/usr/local/share/python
 fi
 # Adding go path if installed
-if [ -d $HOME/gocode ]; then
-  export GOPATH=$HOME/gocode
-  PATH=$PATH:$GOPATH/bin
-fi
+export GOPATH=$HOME/gocode
+export GOROOT=/usr/local/opt/go/libexec
 
-
+PATH=$PATH:$GOPATH/bin
 
 source $(brew --prefix)/etc/bash_completion
 
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-}
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1="$(__git_ps1 "[%s]") "
 # Created using http://bashrcgenerator.com/

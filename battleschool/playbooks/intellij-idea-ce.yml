@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install intellij-idea-ce
+      homebrew_cask: name=intellij-idea-ce state=present
+      sudo: false

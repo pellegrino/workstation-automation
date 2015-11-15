@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install git
+      homebrew_cask: name=git state=present
+      sudo: false
