@@ -1,0 +1,14 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Install karabiner
+      homebrew_cask: name=karabiner state=present
+      notify: setup hyper key
+
+    - name: Install seil
+      homebrew_cask: name=seil state=present
+
+  handlers:
+    - name: setup hyper key
+      copy: src=karabiner/private.xml force=yes dest="~/Library/Application Support/Karabiner/private.xml" backup=true
+      sudo: false

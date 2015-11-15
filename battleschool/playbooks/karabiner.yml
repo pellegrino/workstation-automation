@@ -1,6 +1,0 @@
----
-- hosts: workstation
-
-  tasks:
-    - name: Install karabiner
-      homebrew_cask: name=karabiner state=present
