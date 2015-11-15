@@ -8,7 +8,6 @@
         - configure docker toolbox
       sudo: false
 
-
   handlers:
     - name: configure docker toolbox
       shell: docker-machine create --driver virtualbox default

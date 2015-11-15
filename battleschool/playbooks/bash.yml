@@ -1,0 +1,29 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Install fasd
+      homebrew: name=fasd state=present
+      sudo: false
+
+    - name: Install bash completion
+      homebrew: name="bash-completion git" state=present
+      sudo: false
+
+    - name: setup bashrc
+      copy: src=bash/bash_profile dest="~/.bash_profile" backup=true force=yes
+      sudo: false
+      notify: restart shell
+
+    - name: setup bashrc
+      copy: src=bash/bashrc dest="~/.bashrc" backup=true force=yes
+      sudo: false
+      notify: restart shell
+
+    - name: setup bash extras directory
+      copy: src=bash/bash-extras/ dest="~/.bash-extras" backup=true force=yes
+      sudo: false
+      notify: restart shell
+
+  handlers:
+    - name: restart shell
+      shell: $SHELL -l

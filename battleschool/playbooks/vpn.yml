@@ -1,0 +1,10 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Install tunnelblick
+      homebrew_cask: name=tunnelblick state=present
+      sudo: false
+
+    - name: Install pia
+      homebrew_cask: name=private-internet-access state=present
+      sudo: false

@@ -1,0 +1,16 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Install slate
+      homebrew_cask: name=slate state=present
+      sudo: false
+      notify: open slate
+
+    - name: Configure slate
+      copy: src=slate/slate.conf dest="~/.slate" backup=true force=yes
+      sudo: false
+
+  handlers:
+    - name: open slate
+      shell: /opt/homebrew-cask/Caskroom/slate/latest/Slate.app/Contents/MacOS/Slate &
+      sudo: false

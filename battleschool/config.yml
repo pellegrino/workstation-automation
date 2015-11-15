@@ -8,7 +8,9 @@ sources:
     - lastpass.yml
     - docker-toolbox.yml
     - sonos.yml
-
+    - slate.yml
+    - bash.yml
+    - vpn.yml
 
   git:
     - name: 'osx'
