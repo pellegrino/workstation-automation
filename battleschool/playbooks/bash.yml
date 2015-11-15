@@ -6,7 +6,7 @@
       sudo: false
 
     - name: Install bash completion
-      homebrew: name="bash-completion git" state=present
+      homebrew: name=bash-completion state=present
       sudo: false
 
     - name: setup bashrc
