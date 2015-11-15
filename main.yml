@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  user: vitor
+  connection: local
