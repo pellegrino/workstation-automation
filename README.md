@@ -1,6 +1,6 @@
 # Dotfiles OS X
 
-Dotfiles for mac os x 
+Dotfiles for mac os x
 
 ## Installation setup
 

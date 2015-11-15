@@ -1,0 +1,6 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install sonos
+      homebrew_cask: name=sonos state=present

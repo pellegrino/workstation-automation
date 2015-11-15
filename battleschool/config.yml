@@ -3,32 +3,21 @@ cache_dir: ~/Library/Caches/battleschool
 
 sources:
   local:
+    - homebrew.yml
     - karabiner.yml
- # url:
- #   - name: playbook.yml
- #     url: https://db.tt/VcyI9dvr
+    - lastpass.yml
+    - docker-toolbox.yml
+    - sonos.yml
 
   git:
     - name: 'osx'
       repo: 'https://github.com/spencergibb/ansible-osx'
       playbooks:
-         - homebrew.yml
-         #- adium.yml
-         #- alfred.yml
-         #- better-touch-tool.yml
-         #- chrome-beta.yml
+         - atom.yml
+         - chrome-stable.yml
          - dropbox.yml
-         #- github.yml
-         #- gitx.yml
-         #- intellij-idea-ultimate.yml
-         #- iterm2.yml
-         #- java7.yml
-         #- libreoffice.yml
+         - iterm2.yml
+         - java8.yml
          - spectacle.yml
          - seil.yml
-         #- skype.yml
-         #- truecrypt.yml
-         #- usb-overdrive.yml
-         #- vagrant.yml
-         #- virtualbox.yml
-         #- xtra-finder.yml
+         - skype.yml

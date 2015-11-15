@@ -1,0 +1,6 @@
+---
+- hosts: workstation
+  
+  tasks:
+    - name: Install lastpass
+      homebrew_cask: name=lastpass state=present
