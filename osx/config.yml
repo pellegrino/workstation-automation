@@ -4,6 +4,7 @@ cache_dir: ~/Library/Caches/battleschool
 sources:
   local:
     - homebrew.yml
+    - git.yml
     - bash.yml
     - golang.yml
     - hyper-key.yml

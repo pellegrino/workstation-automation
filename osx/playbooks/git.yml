@@ -1,0 +1,11 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install git
+      homebrew_cask: name=git state=present
+      sudo: false
+
+    - name: Copy gitconfig to the right place
+      copy: src=git/gitconfig force=yes dest="~/.gitconfig" backup=true
+      sudo: false

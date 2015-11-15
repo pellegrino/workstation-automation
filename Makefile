@@ -7,4 +7,4 @@
 default: run
 
 run: .prepare
-	battle --ask-sudo-pass --config-file=`pwd`/battleschool/config.yml  --config-dir=`pwd`/battleschool
+	battle --ask-sudo-pass --config-file=`pwd`/osx/config.yml  --config-dir=`pwd`/osx
