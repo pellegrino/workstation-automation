@@ -1,0 +1,6 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install slack
+      homebrew_cask: name=slack state=present

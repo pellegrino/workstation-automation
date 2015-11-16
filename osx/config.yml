@@ -15,6 +15,7 @@ sources:
     - vpn.yml
     - intellij-idea-ce.yml
     - transmission.yml
+    - slack.yml
 
   git:
    - name: 'osx'
