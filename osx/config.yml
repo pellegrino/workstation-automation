@@ -16,6 +16,7 @@ sources:
     - intellij-idea-ce.yml
     - transmission.yml
     - slack.yml
+    - flux.yml
 
   git:
    - name: 'osx'

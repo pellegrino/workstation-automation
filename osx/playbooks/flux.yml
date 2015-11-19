@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install flux
+      homebrew_cask: name=flux state=present
+      sudo: false
