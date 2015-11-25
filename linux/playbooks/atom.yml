@@ -1,0 +1,10 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Download atom debian package
+      get_url: url=https://github.com/atom/atom/releases/download/v1.3.0-beta6/atom-amd64.deb dest=/tmp/atom-amd64.deb
+      sudo: false
+
+    - name: Installs atom using the debian package
+      apt: deb=/tmp/atom-amd64.deb

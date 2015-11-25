@@ -1,10 +1,7 @@
-.prepare:
-	xcode-select --install 2>/dev/null; true
-	sudo easy_install pip
-	sudo pip install battleschool -U --user python
-	touch $@
+linux:
+	make -C linux
 
-default: run
+osx:
+	make -C osx
 
-run: .prepare
-	battle --ask-sudo-pass --config-file=`pwd`/osx/config.yml  --config-dir=`pwd`/osx
+.PHONY: linux osx
