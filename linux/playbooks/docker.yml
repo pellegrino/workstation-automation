@@ -1,0 +1,23 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Signs the docker apt repo key
+      apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D state=present
+
+    - name: Install docker apt repository
+      apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-wily main' state=present update_cache=yes
+
+    - name: Install docker
+      apt: name=docker-engine state=present
+      notify: start docker
+
+    - name: Installs docker group
+      group: name=docker state=present
+
+    - name: Add my user to docker group
+      user: name='{{ansible_env.SUDO_USER}}' state=present groups="docker" append=yes
+
+  handlers:
+    - name: start docker
+      service: name=docker status=enabled

@@ -10,6 +10,7 @@ sources:
     - golang.yml
     - hyper-key.yml
     - fonts.yml
+    - docker.yml
 #    - lastpass.yml
 #    - docker-toolbox.yml
 #    - sonos.yml

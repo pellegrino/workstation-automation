@@ -5,7 +5,7 @@
       apt: name=unzip state=present
 
     - name: Downloads fasd
-      unarchive: src=bash/fasd-1.0.1.zip dest=target copy=no
+      unarchive: src=bash/fasd-1.0.1.zip dest=target copy=no creates=target/clvv-fasd-4822024
 
     - name: Install fasd
       command: make install chdir=target/clvv-fasd-4822024
