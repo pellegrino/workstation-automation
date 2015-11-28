@@ -1,0 +1,9 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Download rescue-time debian package
+      get_url: url=https://www.rescuetime.com/installers/rescuetime_current_amd64.deb dest=target/rescuetime.deb
+
+    - name: Installs rescue-time using the debian package
+      apt: deb=target/rescuetime.deb
