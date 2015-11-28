@@ -8,7 +8,7 @@
       unarchive: src=bash/fasd-1.0.1.zip dest=target copy=no creates=target/clvv-fasd-4822024
 
     - name: Install fasd
-      command: make install chdir=target/clvv-fasd-4822024
+      command: make install chdir=target/clvv-fasd-4822024 creates=/usr/local/bin/fasd
 
     - name: setup bashrc
       copy: src=bash/bash_profile dest="~/.bash_profile" backup=true force=yes

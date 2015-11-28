@@ -27,9 +27,9 @@ fi
 if [ -d /usr/local/share/python ]; then
   PATH=$PATH:/usr/local/share/python
 fi
-# Sources venvburrito in case it is present
-if [ -d $HOME:/.venvburrito ]; then
-  source ~/.venvburrito/startup.sh
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  . /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # set PATH so it includes user's private bin if it exists
@@ -45,14 +45,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-PATH=$HOME/.jenv/bin:$PATH
-eval "$(jenv init -)"
+if [ -d "$HOME/.jenv" ]; then
+  PATH=$HOME/.jenv/bin:$PATH
+  eval "$(jenv init -)"
+fi
 
 # Adding go path if installed
-if [ -d $HOME:/gocode ]; then
-  export GOPATH=$HOME/gocode
-  PATH=$PATH:$GOPATH/bin
-fi
+export GOPATH=$HOME/gocode
+export GOBIN=$GOPATH/bin
+PATH=$PATH:$GOBIN
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1="$(__git_ps1 "[%s]") "

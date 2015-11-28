@@ -1,0 +1,28 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs jenv
+      shell: git clone https://github.com/gcuisinier/jenv.git ~/.jenv creates=~/.jenv
+      sudo: false
+
+    - name: Installs openjdk-8
+      apt: name=openjdk-8-jdk state=present
+
+    - name: Download intellij
+      get_url: url=https://download.jetbrains.com/idea/ideaIC-15.0.1.tar.gz dest=target/ideaIC-15.0.1.tar.gz
+      sudo: false
+
+    - name: Create tools directory
+      file: name=~/tools state=directory
+      sudo: false
+
+    - name: Extract intellij
+      unarchive: src=target/ideaIC-15.0.1.tar.gz dest=~/tools creates=~/tools/idea-IC-143.382.35
+      notify: start intellij installation
+      sudo: false
+
+  handlers:
+    - name: start intellij installation
+      shell: jenv exec bin/idea.sh chdir=~/tools/idea-IC-143.382.35
+      sudo: false

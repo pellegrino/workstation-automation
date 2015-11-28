@@ -3,12 +3,13 @@ cache_dir: ~/.battleschool
 
 sources:
   local:
+    - base-ubuntu.yml
     - bash.yml
     - atom.yml
     - slack.yml
     - git.yml
     - golang.yml
-    - hyper-key.yml
+    #- hyper-key.yml
     - fonts.yml
     - docker.yml
 #    - lastpass.yml
