@@ -1,0 +1,8 @@
+---
+- hosts: workstation
+  tasks:
+    - name: setup hyper key
+      copy: src=hyper-key/Xmodmap force=yes dest=/etc/X11/xinit/Xmodmaprc backup=true
+
+    - name: calls xmodmap in xinit
+      lineinfile: dest=/etc/X11/xinit/xinitrc line="xmodmap /etc/X11/xinit/Xmodmaprc"

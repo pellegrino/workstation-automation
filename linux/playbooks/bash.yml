@@ -1,0 +1,23 @@
+---
+- hosts: workstation
+  tasks:
+    - name: Installs unzip
+      apt: name=unzip state=present
+
+    - name: Downloads fasd
+      unarchive: src=bash/fasd-1.0.1.zip dest=target copy=no
+
+    - name: Install fasd
+      command: make install chdir=target/clvv-fasd-4822024
+
+    - name: setup bashrc
+      copy: src=bash/bash_profile dest="~/.bash_profile" backup=true force=yes
+      sudo: false
+
+    - name: setup bashrc
+      copy: src=bash/bashrc dest="~/.bashrc" backup=true force=yes
+      sudo: false
+
+    - name: setup bash extras directory
+      copy: src=bash/bash-extras/ dest="~/.bash-extras" backup=true force=yes
+      sudo: false

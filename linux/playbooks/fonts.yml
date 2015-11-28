@@ -1,0 +1,9 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install infinality apt repository
+      apt_repository: repo='ppa:no1wantdthisname/ppa' state=present update_cache=yes
+
+    - name: Install inifinality
+      apt: name=fontconfig-infinality state=present

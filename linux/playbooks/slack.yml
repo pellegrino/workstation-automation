@@ -3,8 +3,7 @@
 
   tasks:
     - name: Download slack debian package
-      get_url: url=https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-desktop-1.2.6-amd64.deb dest=/tmp/slack.deb
-      sudo: false
+      get_url: url=https://slack-ssb-updates.global.ssl.fastly.net/linux_releases/slack-desktop-1.2.6-amd64.deb dest=target/slack.deb
 
     - name: Installs slack using the debian package
-      apt: deb=/tmp/slack.deb
+      apt: deb=target/slack.deb

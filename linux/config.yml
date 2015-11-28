@@ -3,19 +3,17 @@ cache_dir: ~/.battleschool
 
 sources:
   local:
+    - bash.yml
     - atom.yml
     - slack.yml
-#    - homebrew.yml
-#    - git.yml
-#    - bash.yml
-#    - golang.yml
-#    - hyper-key.yml
+    - git.yml
+    - golang.yml
+    - hyper-key.yml
+    - fonts.yml
 #    - lastpass.yml
 #    - docker-toolbox.yml
 #    - sonos.yml
 #    - slate.yml
 #    - vpn.yml
-#    - intellij-idea-ce.yml
+    - intellij-idea-ce.yml
 #    - transmission.yml
-#    - slack.yml
-#    - flux.yml

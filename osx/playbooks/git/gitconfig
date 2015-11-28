@@ -1,3 +1,6 @@
 [user]
 	email = vitorp@gmail.com
 	name = Vitor Pellegrino
+
+[core]
+		editor = atom-beta --wait
