@@ -10,13 +10,14 @@
 
     - name: Install docker
       apt: name=docker-engine state=present
+      sudo: true
       notify: start docker
 
     - name: Installs docker group
       group: name=docker state=present
 
     - name: Add my user to docker group
-      user: name='{{ansible_env.SUDO_USER}}' state=present groups="docker" append=yes
+      user: name='{{ansible_user_id}}' state=present groups="docker" append=yes
 
   handlers:
     - name: start docker

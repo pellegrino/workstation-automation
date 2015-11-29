@@ -1,0 +1,27 @@
+---
+- hosts: workstation
+  sudo: True
+  sudo_user: vitor
+
+- include: playbooks/base-ubuntu.yml
+- include: playbooks/bash.yml
+- include: playbooks/atom.yml
+- include: playbooks/slack.yml
+- include: playbooks/git.yml
+- include: playbooks/golang.yml
+- include: playbooks/hyper-key.yml
+- include: playbooks/fonts.yml
+- include: playbooks/docker.yml
+- include: playbooks/rescue-time.yml
+- include: playbooks/spotify.yml
+- include: playbooks/intellij-idea-ce.yml
+# sources:
+#   local:
+#     -
+#    - lastpass.yml
+#    - docker-toolbox.yml
+#    - sonos.yml
+#    - slate.yml
+#    - vpn.yml
+
+#    - transmission.yml

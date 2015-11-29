@@ -1,8 +1,8 @@
 .prepare:
 	sudo apt-get install python-pip python-dev build-essential
 	sudo pip install --upgrade pip virtualenv virtualenvwrapper
-	$(shell source /usr/local/bin/virtualenvwrapper.sh && pip install battleschool)
+	$(shell source /usr/local/bin/virtualenvwrapper.sh && pip install ansible)
 	touch $@
 
 default: .prepare
-	battle --ask-sudo-pass --config-file=`pwd`/config.yml --config-dir=`pwd` --verbose
+	ansible-playbook -K -s -i ../inventory linux.yml

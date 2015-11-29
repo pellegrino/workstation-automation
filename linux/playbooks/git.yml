@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install git
+      apt: name=git-core state=present
+      sudo: True
