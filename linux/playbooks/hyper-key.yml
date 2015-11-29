@@ -1,8 +1,16 @@
 ---
 - hosts: workstation
   tasks:
-    - name: setup hyper key
-      copy: src=hyper-key/Xmodmap force=yes dest=/etc/X11/xinit/Xmodmaprc backup=true
+    - name: Swap Cmd and Alt keys on apple keyboards
+      lineinfile: dest=/etc/modprobe.d/hid_apple.conf create=yes state=present line="options hid_apple swap_opt_cmd=1"
+      notify: update initramfs
 
-    - name: calls xmodmap in xinit
-      lineinfile: dest=/etc/X11/xinit/xinitrc line="xmodmap /etc/X11/xinit/Xmodmaprc"
+    #- name: setup hyper key
+  #    copy: src=hyper-key/Xmodmap force=yes dest=/etc/X11/xinit/Xmodmaprc backup=true
+
+  #  - name: calls xmodmap in xinit
+#      lineinfile: dest=/etc/X11/xinit/xinitrc line=xmodmap /etc/X11/xinit/Xmodmaprc
+
+  handlers:
+    - name: update initramfs
+      command: update-initramfs -u -k all

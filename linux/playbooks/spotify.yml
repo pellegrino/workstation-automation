@@ -1,0 +1,12 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Signs the spotify apt repo key
+      apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=58118E89F3A912897C070ADBF76221572C52609D state=present
+
+    - name: Install spotify apt repository
+      apt_repository: repo='deb http://repository.spotify.com stable non-free' state=present update_cache=yes
+
+    - name: Install spotify
+      apt: name=spotify-client force=yes state=present
