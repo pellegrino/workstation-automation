@@ -1,6 +1,5 @@
 ---
 - hosts: workstation
-  sudo: True
   sudo_user: vitor
 
 - include: playbooks/base-ubuntu.yml
@@ -15,13 +14,3 @@
 - include: playbooks/rescue-time.yml
 - include: playbooks/spotify.yml
 - include: playbooks/intellij-idea-ce.yml
-# sources:
-#   local:
-#     -
-#    - lastpass.yml
-#    - docker-toolbox.yml
-#    - sonos.yml
-#    - slate.yml
-#    - vpn.yml
-
-#    - transmission.yml
