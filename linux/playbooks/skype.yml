@@ -1,0 +1,9 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Download skype debian package
+      get_url: url=http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb dest=target/skype.deb
+
+    - name: Installs skype using the debian package
+      apt: deb=target/skype.deb
