@@ -9,6 +9,5 @@
         - build-essential
         - ubuntu-restricted-extras
         - ttf-mscorefonts-installer
-        - wine
-        - playonlinux
         - transmission
+        - tree
