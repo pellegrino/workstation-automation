@@ -1,0 +1,29 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Download xflux
+      get_url: url=https://justgetflux.com/linux/xflux64.tgz dest=target/xflux64.tgz
+      sudo: false
+
+    - name: Extract xflux lightable
+      unarchive: src=target/xflux64.tgz dest=~/bin creates=~/bin/xflux
+      notify: fix flux permissions
+      sudo: false
+
+    - name: Creates xflux start script configured for berlin
+      copy: src=flux/startxflux-berlin dest=~/bin/startxflux-berlin backup=true force=yes
+      notify: fix startflux permissions
+      sudo: false
+
+      ## TODO: Create a startup script for flux
+      ## TODO: Create a kill script for flux
+
+  handlers:
+    - name: fix flux permissions
+      file: path=~/bin/xflux mode=0755 state=touch
+      sudo: false
+
+    - name: fix startflux permissions
+      file: path=~/bin/startxflux-berlin mode=0755 state=touch
+      sudo: false

@@ -1,0 +1,16 @@
+
+---
+- hosts: workstation
+
+  tasks:
+    - name: Download lightable
+      get_url: url=https://github.com/LightTable/LightTable/releases/download/0.8.0-alpha/lighttable-0.8.0-alpha-linux.tar.gz dest=target/lighttable-0.8.0-alpha-linux.tar.gz
+      sudo: false
+
+    - name: Create tools directory
+      file: name=~/tools state=directory
+      sudo: false
+
+    - name: Extract lightable
+      unarchive: src=target/lighttable-0.8.0-alpha-linux.tar.gz dest=~/tools creates=~/tools/lighttable-0.8.0-alpha-linux
+      sudo: false

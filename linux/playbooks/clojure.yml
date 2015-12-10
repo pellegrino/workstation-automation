@@ -1,0 +1,20 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs openjdk-8
+      apt: name=openjdk-8-jdk state=present
+
+    - name: Download leiningen
+      get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein dest=~/bin
+      notify: finish leinigen installation
+      sudo: false
+
+    - name: Make leinigen executable
+      file: path=~/bin/lein mode=0755 state=touch
+      sudo: false
+
+  handlers:
+    - name: finish leinigen installation
+      shell: lein
+      sudo: false

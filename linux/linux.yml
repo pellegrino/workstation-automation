@@ -14,5 +14,8 @@
 - include: playbooks/rescue-time.yml
 - include: playbooks/spotify.yml
 - include: playbooks/intellij-idea-ce.yml
+- include: playbooks/lighttable.yml
 - include: playbooks/skype.yml
 - include: playbooks/dropbox.yml
+- include: playbooks/clojure.yml
+- include: playbooks/flux.yml

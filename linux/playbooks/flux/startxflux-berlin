@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Starts xflux configured for berlin with 2300 as color temperature.
+xflux -l 52.528491 -g 13.397381 -k 2300
