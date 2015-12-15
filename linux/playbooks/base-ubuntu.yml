@@ -2,6 +2,9 @@
 - hosts: workstation
 
   tasks:
+    - name: Upgrades packages
+      apt: upgrade=yes update_cache=yes
+
     - name: Installs extra packages
       apt: name={{item}} state=present
       with_items:
@@ -12,6 +15,6 @@
         - tree
         - ack-grep
         - aptitude
-
-    - name: Upgrades packages
-      apt: upgrade=yes update_cache=yes
+        - nodejs
+        - npm
+        - nodejs-legacy
