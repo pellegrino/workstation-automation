@@ -10,7 +10,7 @@
       apt: name=openjdk-8-jdk state=present
 
     - name: Download intellij
-      get_url: url=https://download.jetbrains.com/idea/ideaIC-15.0.1.tar.gz dest=target/ideaIC-15.0.1.tar.gz
+      get_url: url=https://download.jetbrains.com/idea/ideaIC-15.0.2.tar.gz dest=target/ideaIC-15.0.2.tar.gz
       sudo: false
 
     - name: Create tools directory
@@ -18,11 +18,11 @@
       sudo: false
 
     - name: Extract intellij
-      unarchive: src=target/ideaIC-15.0.1.tar.gz dest=~/tools creates=~/tools/idea-IC-143.382.35
+      unarchive: src=target/ideaIC-15.0.2.tar.gz dest=~/tools creates=~/tools/idea-IC-143.1184.17
       notify: start intellij installation
       sudo: false
 
   handlers:
     - name: start intellij installation
-      shell: jenv exec bin/idea.sh chdir=~/tools/idea-IC-143.382.35
+      shell: jenv exec bin/idea.sh chdir=~/tools/idea-IC-143.1184.17
       sudo: false

@@ -2,7 +2,6 @@
 - hosts: workstation
 
   tasks:
-
     - name: Installs extra packages
       apt: name={{item}} state=present
       with_items:
@@ -12,3 +11,7 @@
         - transmission
         - tree
         - ack-grep
+        - aptitude
+
+    - name: Upgrades packages
+      apt: upgrade=yes update_cache=yes

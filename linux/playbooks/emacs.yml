@@ -1,0 +1,14 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs emacs
+      apt: name=emacs24 state=present
+
+    - name: Create emacs directory
+      file: state=directory dest=~/.emacs.d
+      sudo: false
+
+    - name: Configure emacs
+      copy: src=emacs.d/init.el dest="~/.emacs.d/init.el" backup=true force=yes
+      sudo: false 

@@ -19,3 +19,4 @@
 - include: playbooks/dropbox.yml
 - include: playbooks/clojure.yml
 - include: playbooks/flux.yml
+- include: playbooks/emacs.yml
