@@ -11,7 +11,7 @@
       sudo: false
 
     - name: Make leinigen executable
-      file: path=~/bin/lein mode=0755 state=touch
+      file: path=~/bin/lein mode=0755 state=file
       sudo: false
 
   handlers:

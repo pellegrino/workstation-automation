@@ -21,9 +21,9 @@
 
   handlers:
     - name: fix flux permissions
-      file: path=~/bin/xflux mode=0755 state=touch
+      file: path=~/bin/xflux mode=0755 state=file
       sudo: false
 
     - name: fix startflux permissions
-      file: path=~/bin/startxflux-berlin mode=0755 state=touch
+      file: path=~/bin/startxflux-berlin mode=0755 state=file
       sudo: false

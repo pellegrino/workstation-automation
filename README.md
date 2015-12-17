@@ -24,3 +24,5 @@ It will use pure ansible by default.
 
 - Configure AWS, Digital Ocean and github keys using ansible vault
 - Configure private keys with ansible vault.
+- Fix hyper key configuration on linux
+- Remove battleschool dependency on os x

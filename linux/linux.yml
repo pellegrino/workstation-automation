@@ -1,6 +1,5 @@
 ---
 - hosts: workstation
-  sudo_user: vitor
 
 - include: playbooks/base-ubuntu.yml
 - include: playbooks/bash.yml
