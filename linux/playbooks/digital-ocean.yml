@@ -1,0 +1,18 @@
+---
+- hosts: workstation
+
+  tasks:
+    - include_vars: ../vars/keys.enc.yml
+
+    - name: Make sure ruby is installed
+      apt: name={{item}} state=present
+      with_items:
+        - ruby-dev
+        - ruby
+
+    - name: Installs tugboat
+      gem: name=tugboat state=present
+
+    - name: configures tugboat
+      template: src=digital-ocean/tugboat.j2 dest=~/.tugboat backup=yes force=yes 
+      sudo: false

@@ -19,10 +19,11 @@ It will use pure ansible by default.
 
 `make linux` should run accordingly.
 
+## Vault password
+
+Place the password file in resources/vaultpassword. Follow the provided example as a guideline
 
 ## TODO:
 
-- Configure AWS, Digital Ocean and github keys using ansible vault
-- Configure private keys with ansible vault.
 - Fix hyper key configuration on linux
 - Remove battleschool dependency on os x

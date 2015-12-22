@@ -5,4 +5,4 @@
 	touch $@
 
 default: .prepare
-	ansible-playbook -K -s -i ../inventory linux.yml
+	ansible-playbook -K -s -i ../inventory --vault-password-file=../resources/vaultpass linux.yml

@@ -16,4 +16,8 @@
         - project-manager
         - file-icons
         - advanced-open-file
+        - slime
+        - dash
       sudo: false
+
+    ## TODO: Configure snippets
