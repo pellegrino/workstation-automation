@@ -9,13 +9,23 @@
     - name: Install hg
       apt: name=mercurial state=present
 
-    - name: Install golang
-      apt: name=golang state=present
+    - name: Install git
+      apt: name=git state=present
+
+    - name: Fetch golang tarball
+      get_url: url=https://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz dest=target/go1.5.2.linux-amd64.tar.gz
+
+    - name: Extract to the go installation path
+      unarchive: src=target/go1.5.2.linux-amd64.tar.gz dest=/usr/local creates=/usr/local/go/bin/go
 
     - name: Install go vet
-      shell: go get golang.org/x/tools/cmd/vet creates=~/gocode/src/golang.org/x/tools/cmd/vet
+      shell: GOPATH=~/gocode /usr/local/go/bin/go get golang.org/x/tools/cmd/vet creates=~/gocode/src/golang.org/x/tools/cmd/vet
+      sudo: false
+
+    - name: Install go vet
+      shell: GOPATH=~/gocode /usr/local/go/bin/go get github.com/constabulary/gb creates=~/gocode/bin/gb
       sudo: false
 
     - name: Install godoc
-      shell: go get golang.org/x/tools/cmd/godoc creates=~/gocode/src/golang.org/x/tools/cmd/godoc
+      shell: GOPATH=~/gocode /usr/local/go/bin/go get golang.org/x/tools/cmd/godoc creates=~/gocode/src/golang.org/x/tools/cmd/godoc
       sudo: false

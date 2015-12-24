@@ -53,7 +53,7 @@ fi
 # Adding go path if installed
 export GOPATH=$HOME/gocode
 export GOBIN=$GOPATH/bin
-PATH=$PATH:$GOBIN
+PATH=$PATH:$GOBIN:/usr/local/go/bin
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1="$(__git_ps1 "[%s]") "
