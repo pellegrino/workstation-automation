@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install macdown
+      homebrew_cask: name=macdown state=present
+      sudo: false

@@ -1,0 +1,13 @@
+---
+- hosts: workstation
+
+  tasks:
+    - include_vars: ../../vars/keys.enc.yml
+
+    - name: setup ssh public key
+      copy: content="{{public_key}}" backup=yes force=yes mode=644 dest=~/.ssh/id_rsa.pub
+      sudo: false
+
+    - name: setup ssh private key
+      copy: content="{{private_key}}" backup=yes force=yes mode=600 dest=~/.ssh/id_rsa
+      sudo: false

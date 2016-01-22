@@ -2,7 +2,7 @@
 - hosts: workstation
 
   tasks:
-    - include_vars: ../vars/keys.enc.yml
+    - include_vars: ../../vars/keys.enc.yml
 
     - name: Upgrades packages
       apt: upgrade=yes update_cache=yes

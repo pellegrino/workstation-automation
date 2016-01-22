@@ -1,8 +1,9 @@
 ---
 - hosts: workstation
 
+- include: ../common/playbooks/keys.yml
 - include: playbooks/base-ubuntu.yml
-- include: playbooks/aws.yml
+- include: ../common/playbooks/aws.yml
 - include: playbooks/digital-ocean.yml
 - include: playbooks/bash.yml
 - include: playbooks/atom.yml

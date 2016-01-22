@@ -6,5 +6,8 @@
 
 default: run
 
+ansible:
+	ansible-playbook -K -s -i ../inventory --vault-password-file=../resources/vaultpass osx.yml
+
 run: .prepare
 	battle --ask-sudo-pass --config-file=`pwd`/osx/config.yml  --config-dir=`pwd`/osx

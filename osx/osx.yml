@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+- include: ../common/playbooks/keys.yml
+- include: ../common/playbooks/atom-plugins.yml
+- include: playbooks/emacs.yml
+- include: playbooks/macdown.yml

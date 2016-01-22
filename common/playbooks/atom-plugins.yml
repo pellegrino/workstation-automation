@@ -1,0 +1,15 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs atom plugins
+      shell: apm install {{ item }} creates="~/.atom/packages/{{item}}"
+      with_items:
+        - go-plus
+        - go-rename
+        - project-manager
+        - file-icons
+        - advanced-open-file
+        - slime
+        - dash
+      sudo: false

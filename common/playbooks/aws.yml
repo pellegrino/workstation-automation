@@ -5,17 +5,19 @@
     - include_vars: ../../vars/keys.enc.yml
     - include_vars: ../../vars/aws.yml
 
-    - name: Download aws client bundle
-      get_url: url=https://s3.amazonaws.com/aws-cli/awscli-bundle.zip dest=target/awscli-bundle.zip
-
-    - name: Extract aws client bundle
-      unarchive: src=target/awscli-bundle.zip dest=target creates=target/awscli-bundler/install
-   
     - name: Make sure target is present
-      file: dest=target state=directory
+      file: dest=~/.target state=directory
+      sudo: false 
+
+    - name: Download aws client bundle
+      get_url: url=https://s3.amazonaws.com/aws-cli/awscli-bundle.zip dest=~/.target/awscli-bundle.zip
+      
+    - name: Extract aws client bundle
+      unarchive: src=~/.target/awscli-bundle.zip dest=~/.target creates=~/.target/awscli-bundler/install
+      sudo: false
 
     - name: install aws cli
-      shell: target/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws creates=/usr/local/bin/aws
+      shell: ~/.target/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws creates=/usr/local/bin/aws
 
     - name: Create aws directory
       file: dest=~/.aws state=directory

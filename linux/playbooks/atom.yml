@@ -7,17 +7,7 @@
 
     - name: Installs atom using the debian package
       apt: deb=target/atom-amd64.deb
-
-    - name: Installs atom plugins
-      shell: apm install {{ item }} creates="~/.atom/packages/{{item}}"
-      with_items:
-        - go-plus
-        - go-rename
-        - project-manager
-        - file-icons
-        - advanced-open-file
-        - slime
-        - dash
-      sudo: false
+      
+    - include: ../../common/atom-plugins.yml
 
     ## TODO: Configure snippets
