@@ -4,6 +4,7 @@ cache_dir: ~/Library/Caches/battleschool
 sources:
   local:
     - homebrew.yml
+    - atom.yml
     - git.yml
     - bash.yml
     - golang.yml
@@ -22,7 +23,6 @@ sources:
    - name: 'osx'
      repo: 'https://github.com/spencergibb/ansible-osx'
      playbooks:
-        - atom.yml
         - chrome-stable.yml
         - dropbox.yml
         - iterm2.yml

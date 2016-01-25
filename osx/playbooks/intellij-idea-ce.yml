@@ -3,5 +3,5 @@
 
   tasks:
     - name: Install intellij-idea-ce
-      homebrew_cask: name=intellij-idea-ce state=present
+      homebrew_cask: name=intellij-idea state=present
       sudo: false

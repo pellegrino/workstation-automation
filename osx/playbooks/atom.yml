@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install atom
+      homebrew_cask: name=atom state=present
+      sudo: false

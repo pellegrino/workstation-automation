@@ -3,4 +3,4 @@
 	name = Vitor Pellegrino
 
 [core]
-		editor = atom-beta --wait
+		editor = atom --wait

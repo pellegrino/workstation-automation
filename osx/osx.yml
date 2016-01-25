@@ -5,3 +5,4 @@
 - include: ../common/playbooks/atom-plugins.yml
 - include: playbooks/emacs.yml
 - include: playbooks/macdown.yml
+- include: playbooks/spotify.yml
