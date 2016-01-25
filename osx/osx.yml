@@ -1,8 +1,10 @@
 ---
 - hosts: workstation
 
+- include: ../common/playbooks/aws.yml
 - include: ../common/playbooks/keys.yml
 - include: ../common/playbooks/atom-plugins.yml
 - include: playbooks/emacs.yml
 - include: playbooks/macdown.yml
 - include: playbooks/spotify.yml
+- include: playbooks/terraform.yml

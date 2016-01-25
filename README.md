@@ -8,6 +8,8 @@ Based on battleschool this repo has a collection of ansible playbooks for mac os
 
 1. run `make`.
 
+In order for battleschool to execute correctly, ansbile needs to be set to the version 1.9.1
+
 ## Post install
 
 * Open karabiner and follow the instructions to allow it to use assistive device support.

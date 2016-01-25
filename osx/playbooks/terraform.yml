@@ -1,0 +1,21 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Make sure required directories are present
+      file: name={{item}} state=directory
+      sudo: false
+      with_items:
+        - ~/bin
+        - ~/.target
+      
+
+    - name: Fetch terraform
+      get_url: url=https://releases.hashicorp.com/terraform/0.6.9/terraform_0.6.9_darwin_amd64.zip dest=~/.target/terraform.zip
+      sudo: false
+
+
+    - name: Extract terraform binary
+      unarchive: src=~/.target/terraform.zip dest=~/bin creates=~/bin/terraform
+      sudo: false
+
