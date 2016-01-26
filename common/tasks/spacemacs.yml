@@ -1,3 +1,7 @@
-- name: Setup spacemacs
+- name: Clone spacemacs
   shell: git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d creates=~/.emacs.d
+  sudo: false
+
+- name: Setup spacemacs file
+  copy: src=../../common/playbooks/spacemacs/spacemacs dest=~/.spacemacs
   sudo: false
