@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install airdroid
+      homebrew_cask: name=airdroid state=present
+      sudo: false

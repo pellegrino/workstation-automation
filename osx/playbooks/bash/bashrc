@@ -32,11 +32,14 @@ if [ -f $HOME/.venvburrito/startup.sh ]; then
   source $HOME/.venvburrito/startup.sh
 fi
 
-# Adding go path if installed
-export GOPATH=$HOME/gocode
-export GOROOT=/usr/local/opt/go/libexec
+# Adding local bin to path if it's available
+if [ -d $HOME/gocode ];  then
+   export GOPATH=$HOME/gocode
+   export GOROOT=/usr/local/opt/go/libexec
+   PATH=$GOPATH/bin:$PATH
+fi
 
-PATH=$PATH:$GOPATH/bin
+# Adding go path if installed
 
 source $(brew --prefix)/etc/bash_completion
 

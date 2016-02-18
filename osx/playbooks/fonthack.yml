@@ -1,0 +1,7 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install fonthack
+      homebrew_cask: name=font-hack state=present
+      sudo: false

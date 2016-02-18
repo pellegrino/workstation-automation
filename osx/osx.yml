@@ -8,3 +8,7 @@
 - include: playbooks/macdown.yml
 - include: playbooks/spotify.yml
 - include: playbooks/terraform.yml
+- include: playbooks/wunderlist.yml
+- include: playbooks/grammarly.yml
+- include: playbooks/airdroid.yml
+- include: playbooks/fonthack.yml

@@ -1,0 +1,9 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install docker toolbox
+      homebrew_cask: name=dockertoolbox state=present
+      notify:
+        - configure docker toolbox
+      sudo: false

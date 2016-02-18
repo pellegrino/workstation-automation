@@ -27,5 +27,4 @@ sources:
         - dropbox.yml
         - iterm2.yml
         - java8.yml
-        - spectacle.yml
         - skype.yml
