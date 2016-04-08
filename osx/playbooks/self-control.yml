@@ -1,0 +1,6 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Install selfcontrol
+      homebrew_cask: name=selfcontrol state=present

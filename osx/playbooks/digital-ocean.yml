@@ -1,0 +1,12 @@
+---
+- hosts: workstation
+
+  tasks:
+    - include_vars: ../../vars/keys.enc.yml
+
+    - name: Installs tugboat
+      gem: name=tugboat state=present
+
+    - name: configures tugboat
+      template: src=../../linux/playbooks/digital-ocean/tugboat.j2 dest=~/.tugboat backup=yes force=yes
+      sudo: false

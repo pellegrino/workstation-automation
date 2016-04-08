@@ -12,3 +12,5 @@
 - include: playbooks/grammarly.yml
 - include: playbooks/airdroid.yml
 - include: playbooks/fonthack.yml
+- include: playbooks/self-control.yml
+- include: playbooks/digital-ocean.yml
