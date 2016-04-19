@@ -29,3 +29,4 @@ Place the password file in resources/vaultpassword. Follow the provided example 
 
 - Fix hyper key configuration on linux
 - Remove battleschool dependency on os x
+

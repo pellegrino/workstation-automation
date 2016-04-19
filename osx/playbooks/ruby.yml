@@ -1,0 +1,20 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs rbenv
+      homebrew: name=rbenv state=present
+      sudo: false
+      notify: initialize rbenv
+
+    - name: Install ruby-build
+      homebrew: name=ruby-build state=present
+      sudo: false 
+
+    - name: Installs ruby 2.1.4p265
+      shell: rbenv install 2.1.4 creates=~/.rbenv/versions/2.1.4
+      sudo: false
+    
+    - name: initialize rbenv
+      lineinfile: dest=~/.bashrc  line="eval \"$(rbenv init -)\"" state=present
+      sudo: false 

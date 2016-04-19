@@ -10,7 +10,11 @@
 - include: playbooks/terraform.yml
 - include: playbooks/wunderlist.yml
 - include: playbooks/grammarly.yml
-- include: playbooks/airdroid.yml
 - include: playbooks/fonthack.yml
 - include: playbooks/self-control.yml
 - include: playbooks/digital-ocean.yml
+- include: playbooks/ruby.yml
+- include: playbooks/node.yml
+- include: playbooks/elasticsearch.yml
+- include: playbooks/redis.yml
+- include: playbooks/percona-server.yml

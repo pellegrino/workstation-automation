@@ -1,0 +1,11 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs grpc tap 
+      homebrew_tap: tap=mjsteger/grpc state=present
+      sudo: false
+
+    - name: Install grpc
+      homebrew: name=grpc state=present
+      sudo: false 

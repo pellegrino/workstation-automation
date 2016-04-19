@@ -1,0 +1,15 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs percona-server
+      homebrew: name=percona-server state=present
+      sudo: false
+      notify: set up percona-server
+      
+  handlers:
+    - name: set up percona-server
+      shell: unset TMP_DIR; mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix percona-server)" --datadir=/usr/local/var/mysql
+      shell: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.percona-server55.plist
+
+      sudo: false 

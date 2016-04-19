@@ -15,3 +15,10 @@
     - name: Install cask completions
       homebrew_tap: tap=homebrew/completions state=present
       sudo: false
+
+    - name: Install 
+      homebrew_tap:  tap=phillbaker/homebrew-versions state=present
+      
+
+
+    git libyaml gdbm libffi openssl libsodium readline redis wget ruby-install node elasticsearch12 graphicsmagick jump cairo

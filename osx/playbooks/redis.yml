@@ -1,0 +1,13 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs redis
+      homebrew: name=redis state=present
+      sudo: false
+      notify: Start Redis at boot time
+
+  handlers:
+    - name: Start Redis at boot time
+      shell: ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+      sudo: false 

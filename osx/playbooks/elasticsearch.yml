@@ -1,0 +1,18 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs elasticsearch
+      homebrew: name=elasticsearch12 state=present
+      sudo: false
+      notify: Start Elasticsearch at boot time
+
+  handlers:
+    - name: Start Elasticsearch at boot time
+      shell: ln -sfv /usr/local/opt/elasticsearch12/*.plist ~/Library/LaunchAgents
+      sudo: false 
+
+
+    
+
+

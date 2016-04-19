@@ -1,0 +1,15 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: Installs Nodejs
+      homebrew: name=node state=present
+      sudo: false
+
+    - name: Installs webpack 
+      npm: name=webpack global=yes state=present
+      sudo: false
+
+    - name: Installs ember-cli
+      npm: name=ember-cli global=yes state=present
+      sudo: false 
